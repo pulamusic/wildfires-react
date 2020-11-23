@@ -1,3 +1,21 @@
+> Jim Carroll |
+> 11/23/2020 |
+> [GitHub Profile](https://github.com/pulamusic)
+
+---
+
+# wildfires-react
+
+This is a simple project created from a [Traversy Media YouTube tutorial](https://youtu.be/ontX4zfVqK8) that uses [NASA API data](https://api.nasa.gov/) in a [React app](https://reactjs.org/) to map active wildfires.
+
+11/23/2020 | 12:19 EST (GMT-05:00) I'm still just setting up the dev environment.
+
+---
+
+**Below is the original `README.md` text, unedited.**
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
