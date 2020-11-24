@@ -9,6 +9,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <h2>poop</h2>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>fart</p>
       </header>
     </div>
   );
