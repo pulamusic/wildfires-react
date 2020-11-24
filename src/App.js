@@ -1,27 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Map from './components/Map'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h2>poop</h2>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>fart</p>
+    <div>
+
+      <header>
+        <h1>Current wildfires on the U.S. West Coast</h1>
+        <h2>This project accesses Google Maps and NASA APIs</h2>
+        <hr/>
       </header>
+
+      <main>
+        <Map />
+      </main>
+
+      <footer>
+        <p>&copy; 2020 <a href="https://github.com/pulamusic" target="_blank">pulamusic</a></p>
+      </footer>
+
     </div>
   );
-}
+};
 
 export default App;

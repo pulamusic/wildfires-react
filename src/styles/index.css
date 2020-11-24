@@ -1,0 +1,50 @@
+body {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 2em;
+  background-color: #eae8e8;
+  font-family: 'Open Sans', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.map {
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  margin: auto;
+  box-shadow: 1em 1em 5em rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+header {
+  padding: 0 0 2em 1em;
+  margin: 0 2em;
+}
+
+header h2 {
+  margin: 0 0 2em 1em;
+}
+
+header hr {
+  margin: 0 10em;
+}
+
+main {
+  padding: 0.5em;
+  margin: 1em;;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  margin: 2em 0;
+}
