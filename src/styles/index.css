@@ -1,8 +1,13 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-size: 16px;
   font-weight: 300;
   margin: 0;
-  padding: 2em;
+  padding: 0;
   background-color: #eae8e8;
   font-family: 'Open Sans', sans-serif;
 }
@@ -16,6 +21,11 @@ a {
   text-decoration: none;
 }
 
+.container {
+  margin: 0;
+  padding: 2em;
+}
+
 .map {
   width: 80vw;
   height: 80vh;
@@ -25,13 +35,31 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+/* 11/24/2020 | 13:57 EST (GMT-05:00) This next box-shadow doesn't work but would be cool */
+.location-marker {
+  box-shadow: 1em 1em 5em rgba(0, 0, 0, 0.5);
+}
+
+.location-icon {
+  font-size: 3em;
+  color: red;
+}
+
+.org-name {
+  font-weight: 400;
+}
+
 header {
   padding: 0 0 2em 1em;
   margin: 0 2em;
 }
 
 header h2 {
-  margin: 0 0 2em 1em;
+  margin: 0 0 0.8em 1em;
+}
+
+header p {
+  margin: 0 0 2em 3em;
 }
 
 header hr {
