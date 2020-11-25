@@ -1,22 +1,45 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
 import Map from './components/Map'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Spinner from './components/Spinner'
+
 
 function App() {
-  return (
-    <div>
+  const [eventData, setEventData] = useState([])
+  const [loading, setLoading] = useState(false)
 
-      <header>
-        <h1>Current wildfires on the U.S. West Coast</h1>
-        <h2>This project accesses Google Maps and NASA APIs</h2>
-        <hr/>
-      </header>
+  useEffect(()=> {
+    const fetchEvents = async () => {
+
+      setLoading(true)
+
+      const url = 'https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?apikey=MhYhgtZO96ANwF0YuJ5vN5t9cz6CcfcpQm0UQA11'
+
+      const res = await fetch(url)
+
+      const { events } = await res.json()
+
+      setEventData(events)
+
+      setLoading(false)
+
+    }
+
+    fetchEvents(eventData)
+    
+  }, [eventData])
+
+  return (
+    <div className="container">
+      <Header />
 
       <main>
-        <Map />
+        { !loading ? <Map eventData={eventData} /> : <Spinner /> }
       </main>
 
-      <footer>
-        <p>&copy; 2020 <a href="https://github.com/pulamusic" target="_blank">pulamusic</a></p>
-      </footer>
+      <Footer />
 
     </div>
   );
