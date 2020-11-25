@@ -19,11 +19,13 @@ code {
 
 a {
   text-decoration: none;
+
 }
 
 .container {
   margin: 0;
   padding: 2em;
+  display: block;
 }
 
 .map {
@@ -31,7 +33,7 @@ a {
   height: 80vh;
   position: relative;
   margin: auto;
-  box-shadow: 1em 1em 5em rgba(0, 0, 0, 0.5);
+  box-shadow: 1em 0.5em 5em rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -42,16 +44,56 @@ a {
 
 .location-icon {
   font-size: 3em;
-  color: red;
+  color: rgba(255, 0, 0, 0.8);
 }
 
 .org-name {
   font-weight: 400;
 }
 
+.dude {
+  display: inline-block;
+  font-weight: 600;
+  transition: all 2s ease-in-out;
+}
+
+.dude:hover {
+  cursor: pointer;
+  transform: scale(3.1);
+}
+
+.section-marker {
+  text-align: center;
+  font-weight: 400;
+  margin: 1em 0 1.5em 0;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  margin: 0 25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1em 0.5em 5em rgba(0, 0, 0, 0.5);
+}
+
+.spinner h1 {
+  font-weight: 400;
+}
+
 header {
   padding: 0 0 2em 1em;
   margin: 0 2em;
+}
+
+header h1, h2 {
+  font-weight: 400;
+}
+
+header h1 {
+  font-size: 3em;
 }
 
 header h2 {
@@ -68,11 +110,15 @@ header hr {
 
 main {
   padding: 0.5em;
-  margin: 1em;;
+  margin: 2em;
 }
 
 footer {
   text-align: center;
   padding: 1em;
-  margin: 2em 0;
+  margin: 4em 0;
+}
+
+footer p {
+  padding-bottom: 0.1em;
 }

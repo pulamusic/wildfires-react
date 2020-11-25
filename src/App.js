@@ -1,23 +1,40 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
 import Map from './components/Map'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Spinner from './components/Spinner'
 
 function App() {
+  const [eventData, setEventData] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(()=> {
+    const fetchEvents = async () => {
+      setLoading(true)
+      const url = 'https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?apikey=MhYhgtZO96ANwF0YuJ5vN5t9cz6CcfcpQm0UQA11'
+      const res = await fetch(url)
+      const { events } = await res.json()
+
+      setEventData(events)
+      // const eventData = events
+      setLoading(false)
+      console.log(events)
+    }
+
+    fetchEvents(eventData)
+    // console.log(eventData)
+  }, [])
+
   return (
     <div className="container">
-
-      <header>
-        <h1>Current wildfires on the U.S. West Coast</h1>
-        <h2>playing around with Google Maps and NASA APIs</h2>
-        <p>This project started as part of a <a href="https://youtu.be/ontX4zfVqK8" target="_blank" rel="noreferrer">Traversy Media YouTube tutorial</a>. It accesses data from <span className="org-name">Google Maps</span>'s <a href="https://developers.google.com/maps/documentation/javascript/overview" target="_blank" rel="noreferrer">JavaScript API</a> &amp; <span className="org-name">NASA</span>'s <a href="https://api.nasa.gov/" target="_blank" rel="noreferrer">Earth Observatory Natural Event Tracker (EONET) API</a></p>
-        <hr/>
-      </header>
+      <Header />
 
       <main>
-        <Map />
+        { !loading ? <Map eventData={eventData} /> : <Spinner /> }
       </main>
 
-      <footer>
-        <p>&copy; 2020 <a href="https://github.com/pulamusic" target="_blank" rel="noreferrer">pulamusic</a></p>
-      </footer>
+      <Footer />
 
     </div>
   );
