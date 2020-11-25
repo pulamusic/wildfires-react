@@ -10,6 +10,8 @@ This is a simple project created from a [Traversy Media YouTube tutorial](https:
 
 *11/23/2020 | 12:19 EST (GMT-05:00)* I'm still just setting up the dev environment.
 
+*11/25/2020 | 08:47 EST (GMT-05:00)* Finished the app for now. I may deploy it today.
+
 ---
 
 **Below is the original `README.md` text, unedited.**
