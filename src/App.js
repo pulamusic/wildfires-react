@@ -4,6 +4,7 @@ import Map from './components/Map'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Spinner from './components/Spinner'
+import REACT_APP_NASA_KEY from '.env'
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
 
       setLoading(true)
 
-      const url = 'https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?apikey=MhYhgtZO96ANwF0YuJ5vN5t9cz6CcfcpQm0UQA11'
+      const nasaKey = REACT_APP_NASA_KEY
+
+      const url = `https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?apikey=${nasaKey}`
 
       const res = await fetch(url)
 
@@ -28,7 +31,7 @@ function App() {
     }
 
     fetchEvents(eventData)
-    
+
   }, [eventData])
 
   return (

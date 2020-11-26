@@ -2,9 +2,10 @@ import { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import LocationMarker from './LocationMarker'
 import LocationInfo from './LocationInfo'
+import REACT_APP_GOOGLE_KEY from '.env'
 
 const Map = ({ eventData, center, zoom }) => {
-
+  const googleKey = REACT_APP_GOOGLE_KEY
   const [location, setLocation] = useState(null)
 
   const markers = eventData.map(ev => {
@@ -13,12 +14,11 @@ const Map = ({ eventData, center, zoom }) => {
     }
     return null
   })
-  
-  return (
 
+  return (
     <div className="map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyDcQG-GsJVbNhPNfU0y0_JyGsRyhIlcRkE' }}
+        bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={ center }
         defaultZoom={ zoom }
         >
@@ -26,10 +26,8 @@ const Map = ({ eventData, center, zoom }) => {
         </GoogleMapReact>
         { location && <LocationInfo info={location} /> }
     </div>
-
   )
 }
-
 
 Map.defaultProps = {
   center: {
